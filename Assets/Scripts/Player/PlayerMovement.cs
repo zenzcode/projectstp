@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.GlobalIllumination;
+using UnityEngine.Experimental.Rendering.Universal;
 
 public class PlayerMovement : SingletonMonoBehaviour<PlayerMovement>
 {
@@ -12,6 +14,7 @@ public class PlayerMovement : SingletonMonoBehaviour<PlayerMovement>
     [SerializeField] private float playerMovementSpeed = 5;
     [SerializeField] private float jumpForce = 2;
     private bool _isJumping;
+    private bool _isAttacking;
 
     [SerializeField]
     private GameObject groundCheck;
@@ -19,6 +22,10 @@ public class PlayerMovement : SingletonMonoBehaviour<PlayerMovement>
     [SerializeField] private LayerMask groundLayer;
 
     [HideInInspector] public bool canMove;
+
+    [SerializeField]
+    private Light2D lightAttackLight;
+    [SerializeField] private SpriteRenderer lightAttackCircle;
 
 
     #endregion
@@ -40,6 +47,7 @@ public class PlayerMovement : SingletonMonoBehaviour<PlayerMovement>
         }
         
         CheckJump();
+        Attack();
 
         if (transform.position.y <= Settings.LowestObjectY)
         {
@@ -88,6 +96,15 @@ public class PlayerMovement : SingletonMonoBehaviour<PlayerMovement>
         currentVelocity.y = jumpForce;
         _rigidbody2D.velocity = currentVelocity;
         _isJumping = true;
+    }
+
+    private void Attack()
+    {
+        if (_isAttacking) return;
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            print("ATTACK");
+        }
     }
 
     private bool GetIsGrounded()
