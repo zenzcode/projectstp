@@ -13,14 +13,21 @@
           <e p="Color" t="Include">
             <e p="ColoredByMemories.cs" t="Include" />
           </e>
+          <e p="Events" t="Include">
+            <e p="EventHandler.cs" t="Include" />
+          </e>
           <e p="Lighting" t="Include">
+            <e p="LightControl.cs" t="Include" />
             <e p="LightFlicker.cs" t="Include" />
           </e>
           <e p="Manager" t="Include">
             <e p="GameManager.cs" t="Include" />
           </e>
-          <e p="MemoryChest" t="Include">
+          <e p="Memories" t="Include">
+            <e p="Memory.cs" t="Include" />
             <e p="MemoryChest.cs" t="Include" />
+            <e p="MemoryManager.cs" t="Include" />
+            <e p="SO_MemoryList.cs" t="Include" />
           </e>
           <e p="Misc" t="Include">
             <e p="Axes.cs" t="Include" />

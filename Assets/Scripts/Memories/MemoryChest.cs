@@ -6,7 +6,8 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 public class MemoryChest : MonoBehaviour
 {
-    [SerializeField] public Sprite memoryImage;
+    public int memoryId;
+    private Sprite _memoryImage;
     private Animator _animator;
     private SpriteRenderer _childSpriteRenderer;
 
@@ -21,8 +22,14 @@ public class MemoryChest : MonoBehaviour
         if (other.CompareTag(Tags.Player))
         {
             if (_childSpriteRenderer == null) return;
-            _childSpriteRenderer.sprite = memoryImage;
+            _childSpriteRenderer.sprite = _memoryImage;
             _animator.SetTrigger(Settings.PickupMemoryAnimation);
+            EventHandler.CallMemoryCollectedEvent(memoryId);
         }
+    }
+
+    public void SetMemoryImage(Sprite memoryImage)
+    {
+        _memoryImage = memoryImage;
     }
 }

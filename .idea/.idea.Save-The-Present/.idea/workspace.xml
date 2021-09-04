@@ -2,38 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="22ed2b53-b684-4972-85fc-9fb69251437e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Animations.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/MemoryChest.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/MemoryChest/MemoryChest.controller" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/MemoryChest/MemoryChest.controller.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/MemoryChest/MemoryChestIdle.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/MemoryChest/MemoryChestIdle.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/MemoryChest/MemoryChestPickedUp.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/MemoryChest/MemoryChestPickedUp.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Player.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Player/Player.controller" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Player/Player.controller.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Player/PlayerAttack.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Player/PlayerAttack.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Player/PlayerIdle.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Player/PlayerIdle.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/MemoryChest.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/MemoryChest/MemoryChest.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/MemoryChest/MemoryChest.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Lighting.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Lighting/LightFlicker.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MemoryChest.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Misc/Axes.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Misc/Tags.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Misc/Tags.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/PhysicMaterials/NoFriction.physicsMaterial2D" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/PhysicMaterials/NoFriction.physicsMaterial2D.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Memories.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Memories/so_memoryList.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Memories/so_memoryList.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Events/EventHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Lighting/LightControl.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Memories/Memory.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Memories/MemoryChest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Memories/MemoryChest.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Memories/MemoryManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Memories/SO_MemoryList.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Memories/SO_MemoryList.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Save-The-Present/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Save-The-Present/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Save-The-Present/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Save-The-Present/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Player/PlayerAttack.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Player/PlayerAttack.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PhysicMaterials/NoFriction.physicMaterial" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PhysicMaterials/NoFriction.physicMaterial.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Player.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/0_ScenePersistence.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/0_ScenePersistence.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Camera/CameraFollow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Camera/CameraFollow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MemoryChest.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MemoryChest/MemoryChest.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MemoryChest/MemoryChest.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Misc/Settings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Misc/Settings.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,9 +39,14 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Misc/SingletonMonoBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Misc/Axes.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Memories/Memory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Color/ColoredByMemories.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Events/EventHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Memories/SO_MemoryList.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Manager/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Camera/CameraFollow.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Lighting/LightControl.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Memories/MemoryManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Lighting/LightFlicker.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -60,10 +57,16 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Misc/Tags.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Misc/Axes.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Camera/CameraFollow.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/MemoryChest/MemoryChest.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Misc/Settings.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Lighting/LightFlicker.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Lighting/LightControl.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Events/EventHandler.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/MemoryChest/MemoryChest.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Misc/Settings.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Memories/MemoryChest.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Memories/SO_MemoryList.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Memories/Memory.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Memories/MemoryManager.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1xcYK7Q7BeRjV53cnvfYxI6r5tN" />
@@ -120,6 +123,7 @@
       <workItem from="1630655844971" duration="1909000" />
       <workItem from="1630679592195" duration="3752000" />
       <workItem from="1630750729927" duration="3293000" />
+      <workItem from="1630755641037" duration="4587000" />
     </task>
     <servers />
   </component>
