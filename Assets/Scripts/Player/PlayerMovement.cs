@@ -14,6 +14,7 @@ public class PlayerMovement : SingletonMonoBehaviour<PlayerMovement>
     [SerializeField] private float playerMovementSpeed = 5;
     [SerializeField] private float jumpForce = 2;
     private bool _isJumping;
+    private Vector3 _baseScale;
     private bool _isAttacking;
 
     [SerializeField]
@@ -25,7 +26,9 @@ public class PlayerMovement : SingletonMonoBehaviour<PlayerMovement>
 
     [SerializeField]
     private Light2D lightAttackLight;
-    [SerializeField] private SpriteRenderer lightAttackCircle;
+    [SerializeField] 
+    private SpriteRenderer lightAttackCircle;
+
 
 
     #endregion
@@ -36,6 +39,7 @@ public class PlayerMovement : SingletonMonoBehaviour<PlayerMovement>
         canMove = true;
         _isJumping = false;
         _rigidbody2D = GetComponent<Rigidbody2D>();
+        _baseScale = transform.localScale;
     }
 
     private void Update()
@@ -53,7 +57,12 @@ public class PlayerMovement : SingletonMonoBehaviour<PlayerMovement>
         {
             //Call Death Event
         }
-
+    }
+    
+    
+    public void SetCanMove(bool canMove)
+    {
+        this.canMove = canMove;
     }
 
     private void FixedUpdate()
@@ -65,7 +74,7 @@ public class PlayerMovement : SingletonMonoBehaviour<PlayerMovement>
     private void MovePlayer()
     {
         var moveVector = Vector2.zero;
-        var horizontalAxis = Input.GetAxisRaw("Horizontal");
+        var horizontalAxis = Input.GetAxisRaw(Axes.Horizontal);
 
         if (horizontalAxis == 0)
         {
@@ -103,7 +112,6 @@ public class PlayerMovement : SingletonMonoBehaviour<PlayerMovement>
         if (_isAttacking) return;
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            print("ATTACK");
         }
     }
 

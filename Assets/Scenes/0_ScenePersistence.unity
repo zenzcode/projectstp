@@ -1170,7 +1170,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 6328372350068423025}
   offset: {x: 0, y: 0, z: 0}
-  delay: 0
 --- !u!4 &2014477897 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1792064525779260508, guid: c93852eebb999d74fbfe904d4f0abfb0, type: 3}
