@@ -24,8 +24,14 @@ public class MemoryChest : MonoBehaviour
             if (_childSpriteRenderer == null) return;
             _childSpriteRenderer.sprite = _memoryImage;
             _animator.SetTrigger(Settings.PickupMemoryAnimation);
-            EventHandler.CallMemoryCollectedEvent(memoryId);
+            MemoryManager.Instance.SelectMemory(memoryId);
         }
+    }
+
+    public void ReactivateMovememt()
+    {
+        Player.Instance.SetCanMove(true);
+        Destroy(gameObject);
     }
 
     public void SetMemoryImage(Sprite memoryImage)

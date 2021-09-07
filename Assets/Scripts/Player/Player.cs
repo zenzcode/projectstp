@@ -5,7 +5,8 @@ using UnityEngine;
 using UnityEngine.Experimental.GlobalIllumination;
 using UnityEngine.Experimental.Rendering.Universal;
 
-public class PlayerMovement : SingletonMonoBehaviour<PlayerMovement>
+[RequireComponent(typeof(Health))]
+public class Player : SingletonMonoBehaviour<Player>
 {
     #region variables
 
@@ -15,19 +16,21 @@ public class PlayerMovement : SingletonMonoBehaviour<PlayerMovement>
     [SerializeField] private float jumpForce = 2;
     private bool _isJumping;
     private Vector3 _baseScale;
-    private bool _isAttacking;
+    private bool _isUsingLight;
+    private bool _canUseLight;
+    private float _useLightDelay;
+
+    private Animator _animator;
 
     [SerializeField]
     private GameObject groundCheck;
 
     [SerializeField] private LayerMask groundLayer;
 
-    [HideInInspector] public bool canMove;
+    private bool _canMove;
 
     [SerializeField]
-    private Light2D lightAttackLight;
-    [SerializeField] 
-    private SpriteRenderer lightAttackCircle;
+    private Light2D showLight;
 
 
 
@@ -36,21 +39,23 @@ public class PlayerMovement : SingletonMonoBehaviour<PlayerMovement>
     protected override void Awake()
     {
         base.Awake();
-        canMove = true;
+        _canMove = true;
         _isJumping = false;
         _rigidbody2D = GetComponent<Rigidbody2D>();
+        _animator = GetComponent<Animator>();
         _baseScale = transform.localScale;
     }
 
     private void Update()
     {
-        if (!canMove) return;
+        if (!_canMove) return;
         if (GetIsGrounded() && _isJumping)
         {
             _isJumping = false;
         }
         
         CheckJump();
+        CheckAttackTimer();
         Attack();
 
         if (transform.position.y <= Settings.LowestObjectY)
@@ -59,16 +64,26 @@ public class PlayerMovement : SingletonMonoBehaviour<PlayerMovement>
         }
     }
     
-    
     public void SetCanMove(bool canMove)
     {
-        this.canMove = canMove;
+        this._canMove = canMove;
     }
 
     private void FixedUpdate()
     {
-        if (!canMove) return;
+        if (!_canMove) return;
         MovePlayer();
+    }
+
+    private void CheckAttackTimer()
+    {
+        if (_isUsingLight) return;
+
+        _useLightDelay -= Time.deltaTime;
+        if (_useLightDelay <= 0)
+            _canUseLight = true;
+        else
+            _canUseLight = false;
     }
 
     private void MovePlayer()
@@ -109,10 +124,35 @@ public class PlayerMovement : SingletonMonoBehaviour<PlayerMovement>
 
     private void Attack()
     {
-        if (_isAttacking) return;
+        if (!_canUseLight || _isUsingLight) return;
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
+            _isUsingLight = true;
+            _canUseLight = false;
+            _animator.SetTrigger(Settings.PlayerAttackAnimation);
         }
+    }
+
+    public void AttackEnd()
+    {
+        _isUsingLight = false;
+        _canUseLight = true;
+        _useLightDelay = Settings.MaxAttackDelay;
+    }
+
+    private void EnableShowLight()
+    {
+        showLight.intensity = 1;
+    }
+
+    public void DisableShowLight()
+    {
+        showLight.intensity = 0;
+    }
+
+    public void ResetMovementVelocity()
+    {
+        _rigidbody2D.velocity = Vector2.zero;
     }
 
     private bool GetIsGrounded()
