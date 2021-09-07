@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Experimental.GlobalIllumination;
 using UnityEngine.Experimental.Rendering.Universal;
@@ -20,19 +21,25 @@ public class Player : SingletonMonoBehaviour<Player>
     private bool _canUseLight;
     private float _useLightDelay;
 
+    private bool _isInvincible;
+    private float _invincibleTimer;
+
+    public bool IsInvincible
+    {
+        get => _isInvincible;
+    }
+
+    private Collider2D[] _colliders;
+    
     private Animator _animator;
 
-    [SerializeField]
-    private GameObject groundCheck;
+    [SerializeField] private GameObject groundCheck;
 
     [SerializeField] private LayerMask groundLayer;
 
     private bool _canMove;
 
-    [SerializeField]
-    private Light2D showLight;
-
-
+    [SerializeField] private Light2D showLight;
 
     #endregion
 
@@ -41,9 +48,22 @@ public class Player : SingletonMonoBehaviour<Player>
         base.Awake();
         _canMove = true;
         _isJumping = false;
+        _isInvincible = true;
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
+        _colliders = GameObject.FindGameObjectWithTag(Tags.Enemies).GetComponentsInChildren<Collider2D>();
+        
         _baseScale = transform.localScale;
+    }
+
+    private void OnEnable()
+    {
+        EventHandler.PlayerDamagedEvent += PlayerTookDamage;
+    }
+
+    private void OnDisable()
+    {
+        EventHandler.PlayerDamagedEvent -= PlayerTookDamage;
     }
 
     private void Update()
@@ -53,7 +73,8 @@ public class Player : SingletonMonoBehaviour<Player>
         {
             _isJumping = false;
         }
-        
+
+        CheckInvincible();
         CheckJump();
         CheckAttackTimer();
         Attack();
@@ -63,7 +84,7 @@ public class Player : SingletonMonoBehaviour<Player>
             //Call Death Event
         }
     }
-    
+
     public void SetCanMove(bool canMove)
     {
         this._canMove = canMove;
@@ -133,6 +154,26 @@ public class Player : SingletonMonoBehaviour<Player>
         }
     }
 
+    private void CheckInvincible()
+    {
+        if (!_isInvincible) return;
+        
+        _invincibleTimer += Time.deltaTime;
+        if (_invincibleTimer >= Settings.MaxInvincibleTime)
+        {
+            _isInvincible = false;
+            _invincibleTimer = 0;
+            EnableAllColliders();
+        }
+    }
+
+    private void PlayerTookDamage()
+    {
+        //TODO: Create and Play Invincible Animation
+        _isInvincible = true;
+        DisableAllColliders();
+    }
+
     public void AttackEnd()
     {
         _isUsingLight = false;
@@ -140,19 +181,30 @@ public class Player : SingletonMonoBehaviour<Player>
         _useLightDelay = Settings.MaxAttackDelay;
     }
 
-    private void EnableShowLight()
+    private void DisableAllColliders()
     {
-        showLight.intensity = 1;
+        foreach (var colliderEnemy in _colliders)
+        {
+            colliderEnemy.enabled = false;
+        }
     }
-
-    public void DisableShowLight()
+    
+    private void EnableAllColliders()
     {
-        showLight.intensity = 0;
+        foreach (var colliderEnemy in _colliders)
+        {
+            colliderEnemy.enabled = true;
+        }
     }
 
     public void ResetMovementVelocity()
     {
         _rigidbody2D.velocity = Vector2.zero;
+    }
+
+    public void ResetYVelocity()
+    {
+        _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, 0);
     }
 
     private bool GetIsGrounded()

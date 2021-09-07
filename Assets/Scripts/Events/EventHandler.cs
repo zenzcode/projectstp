@@ -16,6 +16,13 @@ public class EventHandler
         PlayerDeathEvent?.Invoke();
     }
 
+    public static event Action PlayerDamagedEvent;
+
+    public static void CallPlayerDamagedEvent()
+    {
+        PlayerDamagedEvent?.Invoke();
+    }
+
     public static event Action OnDialogStarted;
 
     public static void CallDialogStartedEvent()

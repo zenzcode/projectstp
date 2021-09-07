@@ -5,18 +5,13 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public float damage;
-    private Health enemyHealth;
 
-    private void Awake()
-    {
-        enemyHealth = GetComponent<Health>();
-        if (enemyHealth == null) Destroy(gameObject);
-    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag(Tags.Player))
         {
+            if (Player.Instance.IsInvincible) return;
             var healthScript = collision.gameObject.GetComponent<Health>();
             if (healthScript == null) healthScript = collision.gameObject.GetComponentInParent<Health>();
             if (healthScript == null) healthScript = collision.gameObject.GetComponentInChildren<Health>();
@@ -24,8 +19,10 @@ public class Enemy : MonoBehaviour
                 Debug.LogError("HealthScript on Object not Found");
                 return;
             }
-
+            
+            Player.Instance.ResetYVelocity();
             healthScript.TakeDamage(damage);
+            EventHandler.CallPlayerDamagedEvent();
         }
     }
 }
