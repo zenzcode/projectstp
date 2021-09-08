@@ -2,7 +2,8 @@ using UnityEngine;
 
 public static class Settings
 {
-    public const int LowestObjectY = -22;
+    public const bool IsDevMode = true;
+    public const int LowestObjectY = -100;
 
     public const float MaxInvincibleTime = 1f;
     public const float MaxAttackDelay = 0.69f;

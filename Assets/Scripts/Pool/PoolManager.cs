@@ -18,9 +18,11 @@ public class PoolManager : SingletonMonoBehaviour<PoolManager>
 
     private void Awake()
     {
+        base.Awake();
         pool = new Dictionary<int, Queue<GameObject>>();
         foreach (var poolItem in poolItems)
         {
+            pool.Add(poolItem.prefab.GetInstanceID(), new Queue<GameObject>());
             CreatePool(poolItem);
         }
     }

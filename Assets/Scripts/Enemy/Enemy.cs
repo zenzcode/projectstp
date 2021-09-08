@@ -20,6 +20,7 @@ public class Enemy : MonoBehaviour
                 return;
             }
             
+            AudioManager.Instance.PlaySound(SoundEffectType.Damage);
             Player.Instance.ResetYVelocity();
             healthScript.TakeDamage(damage);
             EventHandler.CallPlayerDamagedEvent();

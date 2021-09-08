@@ -7,6 +7,6 @@ public class Memory
     public int memoryId;
     public Image memoryImage;
     //TODO: ADD SERIALIZEABLE WAY
-    public Vector3 worldPosition;
-    public Vector3 worldRotation;
+    public Vector3Serializeable worldPosition;
+    public Vector3Serializeable worldRotation;
 }

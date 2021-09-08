@@ -34,6 +34,8 @@ public class Player : SingletonMonoBehaviour<Player>
     private Animator _animator;
 
     [SerializeField] private GameObject groundCheck;
+    [SerializeField] private GameObject groundCheckRight;
+    [SerializeField] private GameObject groundCheckLeft;
 
     [SerializeField] private LayerMask groundLayer;
 
@@ -76,12 +78,13 @@ public class Player : SingletonMonoBehaviour<Player>
 
         CheckInvincible();
         CheckJump();
+        CheckCheckpoint();
         CheckAttackTimer();
         Attack();
 
         if (transform.position.y <= Settings.LowestObjectY)
         {
-            //Call Death Event
+            CheckCheckpoint();
         }
     }
 
@@ -94,6 +97,17 @@ public class Player : SingletonMonoBehaviour<Player>
     {
         if (!_canMove) return;
         MovePlayer();
+    }
+
+    private void CheckCheckpoint()
+    {
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            transform.position = CheckpointManager.Instance.GetLastCheckpoint().transform.position;
+            ResetMovementVelocity();
+            ResetYVelocity();
+            EventHandler.CallPlayerDeathEvent();
+        }
     }
 
     private void CheckAttackTimer()
@@ -137,6 +151,7 @@ public class Player : SingletonMonoBehaviour<Player>
 
     private void PerformJump()
     {
+        AudioManager.Instance.PlaySound(SoundEffectType.Jump);
         var currentVelocity = _rigidbody2D.velocity;
         currentVelocity.y = jumpForce;
         _rigidbody2D.velocity = currentVelocity;
@@ -151,6 +166,7 @@ public class Player : SingletonMonoBehaviour<Player>
             _isUsingLight = true;
             _canUseLight = false;
             _animator.SetTrigger(Settings.PlayerAttackAnimation);
+            AudioManager.Instance.PlaySound(SoundEffectType.LigntAttackIncrease);
         }
     }
 
@@ -210,6 +226,8 @@ public class Player : SingletonMonoBehaviour<Player>
     private bool GetIsGrounded()
     {
         var collisions = Physics2D.OverlapCircleAll(groundCheck.transform.position, 0.1f, groundLayer);
-        return collisions.Length > 0;
+        var collisionsRight = Physics2D.OverlapCircleAll(groundCheckRight.transform.position, 0.1f, groundLayer);
+        var collisionsLeft = Physics2D.OverlapCircleAll(groundCheckLeft.transform.position, 0.1f, groundLayer);
+        return collisions.Length > 0 || collisionsRight.Length > 0 || collisionsLeft.Length > 0;
     }
 }

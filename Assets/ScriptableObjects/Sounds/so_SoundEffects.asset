@@ -12,4 +12,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 330ea6a0db150634fa515d9aef05ea37, type: 3}
   m_Name: so_SoundEffects
   m_EditorClassIdentifier: 
-  soundEffects: []
+  soundEffects:
+  - audioClip: {fileID: 8300000, guid: 0a81efd2ddcf6e544ab99740293c344e, type: 3}
+    soundEffectType: 1
+    volume: 1
+    randomPitchMinValue: 1
+    randomPitchMaxValue: 1
+  - audioClip: {fileID: 8300000, guid: e27471d1b6c7f6a48b0e77b9d94e0a9e, type: 3}
+    soundEffectType: 2
+    volume: 1
+    randomPitchMinValue: 1
+    randomPitchMaxValue: 1
+  - audioClip: {fileID: 8300000, guid: 0e524ceb72a5c33428c415283fd88d70, type: 3}
+    soundEffectType: 3
+    volume: 1
+    randomPitchMinValue: 1
+    randomPitchMaxValue: 1
+  - audioClip: {fileID: 8300000, guid: 3860106b659d0c242a2b670b89e82247, type: 3}
+    soundEffectType: 4
+    volume: 1
+    randomPitchMinValue: 1
+    randomPitchMaxValue: 1
+  - audioClip: {fileID: 8300000, guid: 000a9b0948fa74b42a1ec53f8523e8ec, type: 3}
+    soundEffectType: 5
+    volume: 1
+    randomPitchMinValue: 1
+    randomPitchMaxValue: 1
+  - audioClip: {fileID: 0}
+    soundEffectType: 7
+    volume: 1
+    randomPitchMinValue: 1
+    randomPitchMaxValue: 1

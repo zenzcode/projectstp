@@ -30,4 +30,11 @@ public class EventHandler
     {
         EffectSpawnEvent?.Invoke(visualEffectType, position);
     }
+
+    public static event Action<Checkpoint> CheckpointUpdatedEvent;
+
+    public static void CallCheckpointUpdatedEvent(Checkpoint checkpoint)
+    {
+        CheckpointUpdatedEvent?.Invoke(checkpoint);
+    }
 }

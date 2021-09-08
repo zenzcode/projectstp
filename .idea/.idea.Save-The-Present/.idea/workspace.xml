@@ -2,20 +2,72 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="22ed2b53-b684-4972-85fc-9fb69251437e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemy/EnemySpike.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemy/EnemySpike.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Enemy.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Enemy/EnemyIdle.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Enemy/EnemyIdle.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Enemy/EnemySpike.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Enemy/EnemySpike.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Enemy/EnemyUpDown.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Enemy/EnemyUpDown.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Audio/attack_decrease.flac" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Audio/attack_decrease.flac.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Audio/attack_increase.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Audio/attack_increase.mp3.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Audio/damage.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Audio/damage.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Audio/jump.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Audio/jump.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Audio/on.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Audio/on.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Memories/Images.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Memories/Images/WhatsApp Image 2021-09-09 at 00.34.16 (1).jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Memories/Images/WhatsApp Image 2021-09-09 at 00.34.16 (1).jpeg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Memories/Images/WhatsApp Image 2021-09-09 at 00.34.16 (2).jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Memories/Images/WhatsApp Image 2021-09-09 at 00.34.16 (2).jpeg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Memories/Images/WhatsApp Image 2021-09-09 at 00.34.16 (3).jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Memories/Images/WhatsApp Image 2021-09-09 at 00.34.16 (3).jpeg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Memories/Images/WhatsApp Image 2021-09-09 at 00.34.16 (4).jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Memories/Images/WhatsApp Image 2021-09-09 at 00.34.16 (4).jpeg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Memories/Images/WhatsApp Image 2021-09-09 at 00.34.16.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Memories/Images/WhatsApp Image 2021-09-09 at 00.34.16.jpeg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Memories/Images/WhatsApp Image 2021-09-09 at 00.37.02.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Memories/Images/WhatsApp Image 2021-09-09 at 00.37.02.jpeg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Checkpoints.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Checkpoints/Checkpoint.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Checkpoints/Checkpoint.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Checkpoint.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Checkpoint/Checkpoint.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Checkpoint/CheckpointManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Debug/DebugLight.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Debug/DebugLight.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Misc/Vector3Serializeable.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/VFX/VFXManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/VFX/VFXManager.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Save-The-Present/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Save-The-Present/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Save-The-Present/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Save-The-Present/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Save-The-Present/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Save-The-Present/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Player/Player.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Player/Player.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Player/PlayerAttackEnd.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Player/PlayerAttackEnd.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Audio/Music Mixer.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Audio/Player Mixer.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Audio/Player Mixer/PlayerMixer.mixer" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Audio/Player Mixer/PlayerMixer.mixer.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Memories/Pictures.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Memories/Videos.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemy/EnemySpike.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemy/EnemySpike.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Ground/Ground_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Ground/Ground_01.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Ground/LitGround_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Ground/LitGround_01.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Ground/LitOnTouchGround_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Ground/LitOnTouchGround_01.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/MemoryChest/MemoryChest.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/MemoryChest/MemoryChest.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Ramp/Ramp.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Ramp/Ramp.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/0_ScenePersistence.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/0_ScenePersistence.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Sounds/so_SoundEffects.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Sounds/so_SoundEffects.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Events/EventHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Events/EventHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Memories/Memory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Memories/Memory.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Misc/Settings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Misc/Settings.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Misc/Tags.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Misc/Tags.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Platform/PlatformLightActivator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Platform/PlatformLightActivator.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Pool/PoolManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Pool/PoolManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Sound/AudioManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Sound/AudioManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,13 +79,18 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Misc/SingletonMonoBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Misc/Axes.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Memories/Memory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Color/ColoredByMemories.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Events/EventHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Misc/Vector3Serializeable.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/VFX/VFXManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Checkpoint/CheckpointManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Misc/Axes.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Memories/SO_MemoryList.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Debug/DebugLight.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Manager/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Camera/CameraFollow.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Checkpoint/Checkpoint.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Lighting/LightControl.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Memories/MemoryManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Lighting/LightFlicker.cs" root0="FORCE_HIGHLIGHTING" />
@@ -51,13 +108,21 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/MemoryChest/MemoryChest.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Memories/MemoryChest.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Memories/SO_MemoryList.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Memories/Memory.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Memories/MemoryManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Events/EventHandler.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Misc/Settings.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Misc/Tags.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Memories/Memory.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Events/EventHandler.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Misc/Vector3Serializeable.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Debug/DebugLight.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Sound/AudioManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Pool/PoolManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Platform/PlatformLightActivator.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Misc/Settings.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Checkpoint/Checkpoint.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Checkpoint/CheckpointManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/VFX/VFXManager.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1xcYK7Q7BeRjV53cnvfYxI6r5tN" />
@@ -116,6 +181,7 @@
       <workItem from="1630750729927" duration="3293000" />
       <workItem from="1630755641037" duration="4587000" />
       <workItem from="1631029076994" duration="5523000" />
+      <workItem from="1631121579426" duration="8549000" />
     </task>
     <servers />
   </component>

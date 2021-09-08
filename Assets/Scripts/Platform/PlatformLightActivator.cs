@@ -13,7 +13,6 @@ public class PlatformLightActivator : MonoBehaviour
         if (_lightToActivate == null)
             Destroy(this);
 
-
         _lightToActivate.enabled = false;
     }
 
@@ -21,6 +20,7 @@ public class PlatformLightActivator : MonoBehaviour
     {
         if (collision.CompareTag(Tags.Player))
         {
+            AudioManager.Instance.PlaySound(SoundEffectType.LightTurnOn);
             _lightToActivate.enabled = true;
             Destroy(this);
         }

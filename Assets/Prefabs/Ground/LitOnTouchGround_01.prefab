@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 2888134462171684200}
   - component: {fileID: 3515631035241482545}
   - component: {fileID: 3515631035241482546}
+  - component: {fileID: -1844984473038712699}
+  - component: {fileID: -3354724157390614478}
   m_Layer: 3
   m_Name: LitOnTouchGround_01
   m_TagString: Ground
@@ -27,7 +29,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2888134462171684203}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 9.12, y: -3.21, z: 0}
   m_LocalScale: {x: 2.462344, y: 0.3125, z: 1}
   m_Children:
@@ -111,7 +113,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.9146613}
+  m_Size: {x: 0.98, y: 0.9146613}
   m_EdgeRadius: 0
 --- !u!61 &3515631035241482545
 BoxCollider2D:
@@ -149,6 +151,32 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 31155354ac201c24d9a293bc0fff2f23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-1844984473038712699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2888134462171684203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dda6fa6dd04c0e4d991d57c46fdb958, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startColor: {r: 1, g: 1, b: 1, a: 1}
+  destinationColor: {r: 0.2357639, g: 0.035243843, b: 0.8301887, a: 1}
+--- !u!114 &-3354724157390614478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2888134462171684203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ff3034c8e6685345a6c3d7ba236617b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &3515631034074469259

@@ -15,6 +15,7 @@ public class AudioManager : SingletonMonoBehaviour<AudioManager>
 
     private void Awake()
     {
+        base.Awake();
         _audioClips = new Dictionary<string, SoundEffect>();
         InitialiseSoundEffects();
     }
@@ -23,12 +24,14 @@ public class AudioManager : SingletonMonoBehaviour<AudioManager>
     {
         if(_audioClips.TryGetValue(soundEffectType.ToString(), out var audioClip))
         {
-            var currentObject = PoolManager.Instance.ReuseGameObject(soundPrefab, Vector3.zero, Quaternion.identity);
+            var currentObject = PoolManager.Instance.ReuseGameObject(soundPrefab, Player.Instance.transform.position, Quaternion.identity);
             if (currentObject == null) return;
             var audioComponent = currentObject.GetComponent<AudioSource>();
             audioComponent.clip = audioClip.audioClip;
             audioComponent.volume = audioClip.volume;
             audioComponent.pitch = Random.Range(audioClip.randomPitchMinValue, audioClip.randomPitchMaxValue);
+            currentObject.SetActive(true);
+            audioComponent.Play();
             StartCoroutine(DisableObject(currentObject, audioClip.audioClip.length));
         }
     }
