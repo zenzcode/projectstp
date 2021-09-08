@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 
 public class EventHandler
 {
@@ -23,24 +24,10 @@ public class EventHandler
         PlayerDamagedEvent?.Invoke();
     }
 
-    public static event Action OnDialogStarted;
+    public static event Action<VisualEffectType, Vector3> EffectSpawnEvent;
 
-    public static void CallDialogStartedEvent()
+    public static void CallEffectSpawnEvent(VisualEffectType visualEffectType, Vector3 position)
     {
-        OnDialogStarted?.Invoke();
-    }
-
-    public static event Action OnDialogContinued;
-
-    public static void CallDialogContinued()
-    {
-        OnDialogContinued?.Invoke();
-    }
-
-    public static event Action OnDialogEnded;
-    
-    public static void CallDialogEnded()
-    {
-        OnDialogEnded?.Invoke();
+        EffectSpawnEvent?.Invoke(visualEffectType, position);
     }
 }

@@ -6,6 +6,8 @@ using UnityEngine.Experimental.Rendering.Universal;
 [RequireComponent(typeof(Light2D))]
 public class TimedLightActivator : MonoBehaviour
 {
+
+    //TODO
     [SerializeField]
     private float activatedTime = 1;
     private float _timerActive;
