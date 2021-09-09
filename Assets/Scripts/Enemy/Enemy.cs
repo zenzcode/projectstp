@@ -23,8 +23,7 @@ public class Enemy : MonoBehaviour
             AudioManager.Instance.PlaySound(SoundEffectType.Damage);
             EventHandler.CallEffectSpawnEvent(VisualEffectType.Damage, Player.Instance.transform.position);
             Player.Instance.ResetYVelocity();
-            healthScript.TakeDamage(damage);
-            EventHandler.CallPlayerDamagedEvent();
+            EventHandler.CallPlayerDamagedEvent(healthScript.GetHealth() - damage);
         }
     }
 }

@@ -17,11 +17,11 @@ public class EventHandler
         PlayerDeathEvent?.Invoke();
     }
 
-    public static event Action PlayerDamagedEvent;
+    public static event Action<float> PlayerDamagedEvent;
 
-    public static void CallPlayerDamagedEvent()
+    public static void CallPlayerDamagedEvent(float newHealth)
     {
-        PlayerDamagedEvent?.Invoke();
+        PlayerDamagedEvent?.Invoke(newHealth);
     }
 
     public static event Action<VisualEffectType, Vector3> EffectSpawnEvent;
@@ -36,5 +36,12 @@ public class EventHandler
     public static void CallCheckpointUpdatedEvent(Checkpoint checkpoint)
     {
         CheckpointUpdatedEvent?.Invoke(checkpoint);
+    }
+
+    public static event Action<float> CameraZoomEvent;
+
+    public static void CallCameraZoomEvent(float target)
+    {
+        CameraZoomEvent?.Invoke(target);
     }
 }

@@ -64,11 +64,13 @@ public class Player : SingletonMonoBehaviour<Player>
     private void OnEnable()
     {
         EventHandler.PlayerDamagedEvent += PlayerTookDamage;
+        EventHandler.PlayerDeathEvent += TeleportToCheckpoint;
     }
 
     private void OnDisable()
     {
         EventHandler.PlayerDamagedEvent -= PlayerTookDamage;
+        EventHandler.PlayerDeathEvent -= TeleportToCheckpoint;
     }
 
     private void Update()
@@ -113,7 +115,7 @@ public class Player : SingletonMonoBehaviour<Player>
         transform.position = CheckpointManager.Instance.GetLastCheckpoint().transform.position;
         ResetMovementVelocity();
         ResetYVelocity();
-        EventHandler.CallPlayerDeathEvent();
+        EventHandler.CallPlayerDamagedEvent(Settings.MaxHealth);
     }
 
     private void CheckAttackTimer()
@@ -189,8 +191,14 @@ public class Player : SingletonMonoBehaviour<Player>
             _isUsingLight = true;
             _canUseLight = false;
             _animator.SetTrigger(Settings.PlayerAttackAnimation);
+            EventHandler.CallCameraZoomEvent(Settings.ZoomedOutCamSize);
             AudioManager.Instance.PlaySound(SoundEffectType.LigntAttackIncrease);
         }
+    }
+
+    private void AttackAnimationEnd()
+    {
+        EventHandler.CallCameraZoomEvent(Settings.CamSize);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -234,7 +242,7 @@ public class Player : SingletonMonoBehaviour<Player>
         }
     }
 
-    private void PlayerTookDamage()
+    private void PlayerTookDamage(float newHealth)
     {
         _isInvincible = true;
         DisableAllColliders();

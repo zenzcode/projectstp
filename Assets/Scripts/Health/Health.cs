@@ -4,33 +4,31 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    public float health = 100;
+    public float health;
 
-    private bool _isPlayer;
-     
-    private void Awake()
+    private void OnEnable()
     {
-        _isPlayer = GetComponent<Player>() != null || 
-            GetComponentInParent<Player>() != null || 
-            GetComponentInChildren<Player>() != null;
+        EventHandler.PlayerDamagedEvent += TakeDamage;
     }
 
-    public void TakeDamage(float damage)
+    private void OnDisable()
     {
-        health = Mathf.Max(0, health - damage);
+        EventHandler.PlayerDamagedEvent -= TakeDamage;
+    }
+
+    public void TakeDamage(float newHealth)
+    {
+        health = Mathf.Max(0, newHealth);
 
         if(health == 0)
         {
-            if (_isPlayer)
-            {
-                EventHandler.CallPlayerDeathEvent();
-            }
-            else
-            {
-                //TODO: DEATH
-                Destroy(gameObject);
-            }
+            EventHandler.CallPlayerDeathEvent();
         }
     }   
+
+    public float GetHealth()
+    {
+        return health;
+    }
 
 }
