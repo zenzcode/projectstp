@@ -22,6 +22,7 @@ public class Enemy : MonoBehaviour
             
             AudioManager.Instance.PlaySound(SoundEffectType.Damage);
             EventHandler.CallEffectSpawnEvent(VisualEffectType.Damage, Player.Instance.transform.position);
+            EventHandler.CallCameraShakeEvent(.10f);
             Player.Instance.ResetYVelocity();
             EventHandler.CallPlayerDamagedEvent(healthScript.GetHealth() - damage);
         }

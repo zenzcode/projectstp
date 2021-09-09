@@ -21,5 +21,7 @@ public class HealthBarBehaviour : MonoBehaviour
     private void PlayerHealthUpdated(float newHealth)
     {
         healthBarFillImage.fillAmount = newHealth / Settings.MaxHealth;
+
+        if (healthBarFillImage.fillAmount == 0) healthBarFillImage.fillAmount = 1;
     }
 }

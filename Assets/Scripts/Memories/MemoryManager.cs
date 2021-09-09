@@ -10,7 +10,18 @@ public class MemoryManager : SingletonMonoBehaviour<MemoryManager>
     {
         Player.Instance.ResetMovementVelocity();
         Player.Instance.SetCanMove(false);
+        Player.Instance.ResetJump();
         catchedMemories++;
         EventHandler.CallMemoryCollectedEvent(memoryId);
+    }
+
+    public int GetSelectedMemoryCount()
+    {
+        return catchedMemories;
+    }
+
+    public int GetMaxMemories()
+    {
+        return GameObject.FindGameObjectsWithTag(Tags.MemoryChest).Length;
     }
 }

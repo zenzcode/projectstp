@@ -6,9 +6,14 @@
     <e p="E:\Coding\Save-The-Present" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="Fonts" t="Include">
+          <e p="LICENSE.txt" t="Include" />
+        </e>
         <e p="Scripts" t="Include">
           <e p="Camera" t="Include">
             <e p="CameraFollow.cs" t="Include" />
+            <e p="CameraShake.cs" t="Include" />
+            <e p="CameraZoomOut.cs" t="Include" />
           </e>
           <e p="Checkpoint" t="Include">
             <e p="Checkpoint.cs" t="Include" />
@@ -16,6 +21,9 @@
           </e>
           <e p="Color" t="Include">
             <e p="ColoredByMemories.cs" t="Include" />
+          </e>
+          <e p="Cutscene" t="Include">
+            <e p="CutsceneStart.cs" t="Include" />
           </e>
           <e p="Debug" t="Include">
             <e p="DebugLight.cs" t="Include" />
@@ -33,6 +41,10 @@
           <e p="Health" t="Include">
             <e p="Health.cs" t="Include" />
           </e>
+          <e p="HealthBar" t="Include">
+            <e p="HealthBarBehaviour.cs" t="Include" />
+            <e p="PlayerHealthBarFollow.cs" t="Include" />
+          </e>
           <e p="Lighting" t="Include">
             <e p="LightControl.cs" t="Include" />
             <e p="LightFlicker.cs" t="Include" />
@@ -42,10 +54,8 @@
             <e p="GameManager.cs" t="Include" />
           </e>
           <e p="Memories" t="Include">
-            <e p="Memory.cs" t="Include" />
             <e p="MemoryChest.cs" t="Include" />
             <e p="MemoryManager.cs" t="Include" />
-            <e p="SO_MemoryList.cs" t="Include" />
           </e>
           <e p="Misc" t="Include">
             <e p="Axes.cs" t="Include" />

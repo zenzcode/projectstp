@@ -44,4 +44,11 @@ public class EventHandler
     {
         CameraZoomEvent?.Invoke(target);
     }
+
+    public static event Action<float> CameraShakeEvent;
+
+    public static void CallCameraShakeEvent(float time)
+    {
+        CameraShakeEvent?.Invoke(time);
+    }
 }

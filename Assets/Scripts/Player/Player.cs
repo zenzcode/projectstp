@@ -64,13 +64,13 @@ public class Player : SingletonMonoBehaviour<Player>
     private void OnEnable()
     {
         EventHandler.PlayerDamagedEvent += PlayerTookDamage;
-        EventHandler.PlayerDeathEvent += TeleportToCheckpoint;
+        EventHandler.PlayerDeathEvent += PlayerDied;
     }
 
     private void OnDisable()
     {
         EventHandler.PlayerDamagedEvent -= PlayerTookDamage;
-        EventHandler.PlayerDeathEvent -= TeleportToCheckpoint;
+        EventHandler.PlayerDeathEvent -= PlayerDied;
     }
 
     private void Update()
@@ -100,6 +100,11 @@ public class Player : SingletonMonoBehaviour<Player>
     {
         if (!_canMove) return;
         MovePlayer();
+    }
+
+    private void PlayerDied()
+    {
+        TeleportToCheckpoint();
     }
 
     private void CheckCheckpoint()
@@ -167,6 +172,11 @@ public class Player : SingletonMonoBehaviour<Player>
         _isJumping = true;
     }
 
+    public void ResetJump()
+    {
+        _isJumping = false;
+    }
+
     private Vector3 GetTouchingGroundPosition()
     {
         var collisions = Physics2D.OverlapCircleAll(groundCheck.transform.position, 0.1f, groundLayer);
@@ -196,7 +206,7 @@ public class Player : SingletonMonoBehaviour<Player>
         }
     }
 
-    private void AttackAnimationEnd()
+    public void AttackAnimationEnd()
     {
         EventHandler.CallCameraZoomEvent(Settings.CamSize);
     }
@@ -247,7 +257,6 @@ public class Player : SingletonMonoBehaviour<Player>
         _isInvincible = true;
         DisableAllColliders();
         _animator.SetTrigger(Settings.PlayerInjuredAnimation);
-
     }
 
     public void AttackEnd()

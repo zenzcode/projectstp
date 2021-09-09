@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,8 +25,11 @@ public class CameraZoomOut : MonoBehaviour
 
     private void ZoomCamera(float target)
     {
+        Debug.Log(target);
         if (_zoomOutRoutine != null) return;
+        Debug.Log($"Started for target {target}");
         _zoomOutRoutine = StartCoroutine(ZoomCameraRoutine(target));
+        
     }
 
     private IEnumerator ZoomCameraRoutine(float target)
@@ -43,9 +47,11 @@ public class CameraZoomOut : MonoBehaviour
                 _mainCamera.orthographicSize += 0.01f;
             }
         }
-
         _mainCamera.orthographicSize = target;
-        _zoomOutRoutine = null;
         StopCoroutine(_zoomOutRoutine);
+        _zoomOutRoutine = null;
+        Debug.Log($"Finished for target {target}");
+        Debug.Log($"{_zoomOutRoutine}");
+        
     }
 }
