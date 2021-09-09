@@ -4,10 +4,8 @@ public enum SoundEffectType
         Damage,
         Jump,
         LigntAttackIncrease,
-        LightAttackDecrease,
         LightTurnOn,
         LightFlicker,
-        MusicBackground,
         Count
 }
 

@@ -28,18 +28,8 @@ MonoBehaviour:
     volume: 1
     randomPitchMinValue: 1
     randomPitchMaxValue: 1
-  - audioClip: {fileID: 8300000, guid: 3860106b659d0c242a2b670b89e82247, type: 3}
-    soundEffectType: 4
-    volume: 1
-    randomPitchMinValue: 1
-    randomPitchMaxValue: 1
   - audioClip: {fileID: 8300000, guid: 000a9b0948fa74b42a1ec53f8523e8ec, type: 3}
     soundEffectType: 5
-    volume: 1
-    randomPitchMinValue: 1
-    randomPitchMaxValue: 1
-  - audioClip: {fileID: 0}
-    soundEffectType: 7
     volume: 1
     randomPitchMinValue: 1
     randomPitchMaxValue: 1

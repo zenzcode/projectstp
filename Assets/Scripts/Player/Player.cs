@@ -16,6 +16,7 @@ public class Player : SingletonMonoBehaviour<Player>
     [SerializeField] private float playerMovementSpeed = 5;
     [SerializeField] private float jumpForce = 2;
     private bool _isJumping;
+    private bool _hasLeftGround = false;
     private Vector3 _baseScale;
     private bool _isUsingLight;
     private bool _canUseLight;
@@ -23,6 +24,8 @@ public class Player : SingletonMonoBehaviour<Player>
 
     private bool _isInvincible;
     private float _invincibleTimer;
+
+    private Coroutine UntilDieRoutine = null;
 
     public bool IsInvincible
     {
@@ -71,9 +74,12 @@ public class Player : SingletonMonoBehaviour<Player>
     private void Update()
     {
         if (!_canMove) return;
-        if (GetIsGrounded() && _isJumping)
+
+        if (_hasLeftGround && GetIsGrounded() && _isJumping)
         {
             _isJumping = false;
+            _hasLeftGround = false;
+            EventHandler.CallEffectSpawnEvent(VisualEffectType.JumpLand, GetTouchingGroundPosition());
         }
 
         CheckInvincible();
@@ -81,11 +87,6 @@ public class Player : SingletonMonoBehaviour<Player>
         CheckCheckpoint();
         CheckAttackTimer();
         Attack();
-
-        if (transform.position.y <= Settings.LowestObjectY)
-        {
-            CheckCheckpoint();
-        }
     }
 
     public void SetCanMove(bool canMove)
@@ -103,11 +104,16 @@ public class Player : SingletonMonoBehaviour<Player>
     {
         if (Input.GetKeyDown(KeyCode.C))
         {
-            transform.position = CheckpointManager.Instance.GetLastCheckpoint().transform.position;
-            ResetMovementVelocity();
-            ResetYVelocity();
-            EventHandler.CallPlayerDeathEvent();
+            TeleportToCheckpoint();
         }
+    }
+
+    private void TeleportToCheckpoint()
+    {
+        transform.position = CheckpointManager.Instance.GetLastCheckpoint().transform.position;
+        ResetMovementVelocity();
+        ResetYVelocity();
+        EventHandler.CallPlayerDeathEvent();
     }
 
     private void CheckAttackTimer()
@@ -151,11 +157,28 @@ public class Player : SingletonMonoBehaviour<Player>
 
     private void PerformJump()
     {
+        EventHandler.CallEffectSpawnEvent(VisualEffectType.JumpStart, GetTouchingGroundPosition());
         AudioManager.Instance.PlaySound(SoundEffectType.Jump);
         var currentVelocity = _rigidbody2D.velocity;
         currentVelocity.y = jumpForce;
         _rigidbody2D.velocity = currentVelocity;
         _isJumping = true;
+    }
+
+    private Vector3 GetTouchingGroundPosition()
+    {
+        var collisions = Physics2D.OverlapCircleAll(groundCheck.transform.position, 0.1f, groundLayer);
+        var collisionsRight = Physics2D.OverlapCircleAll(groundCheckRight.transform.position, 0.1f, groundLayer);
+        var collisionsLeft = Physics2D.OverlapCircleAll(groundCheckLeft.transform.position, 0.1f, groundLayer);
+
+        if (collisions.Length > 0)
+            return groundCheck.transform.position;
+        else if (collisionsRight.Length > 0)
+            return groundCheckRight.transform.position;
+        else if (collisionsLeft.Length > 0)
+            return groundCheckLeft.transform.position;
+
+        return Vector3.zero;
     }
 
     private void Attack()
@@ -170,6 +193,33 @@ public class Player : SingletonMonoBehaviour<Player>
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag(Tags.Ground))
+        {
+            _hasLeftGround = false;
+        }
+        if (UntilDieRoutine == null) return;
+        StopCoroutine(UntilDieRoutine);
+        UntilDieRoutine = null;
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag(Tags.Ground))
+        {
+            _hasLeftGround = true;
+        }
+        if (UntilDieRoutine != null) return;
+        UntilDieRoutine = StartCoroutine(CheckPlayerDead());
+    }
+
+    private IEnumerator CheckPlayerDead()
+    {
+        yield return new WaitForSeconds(Settings.SecondsUntilDead);
+        TeleportToCheckpoint();
+    }
+
     private void CheckInvincible()
     {
         if (!_isInvincible) return;
@@ -180,14 +230,16 @@ public class Player : SingletonMonoBehaviour<Player>
             _isInvincible = false;
             _invincibleTimer = 0;
             EnableAllColliders();
+            _animator.SetTrigger(Settings.PlayerInjuredEndAnimation);
         }
     }
 
     private void PlayerTookDamage()
     {
-        //TODO: Create and Play Invincible Animation
         _isInvincible = true;
         DisableAllColliders();
+        _animator.SetTrigger(Settings.PlayerInjuredAnimation);
+
     }
 
     public void AttackEnd()
@@ -222,6 +274,7 @@ public class Player : SingletonMonoBehaviour<Player>
     {
         _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, 0);
     }
+
 
     private bool GetIsGrounded()
     {
