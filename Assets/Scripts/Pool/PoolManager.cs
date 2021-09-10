@@ -16,7 +16,7 @@ public class PoolManager : SingletonMonoBehaviour<PoolManager>
 
     private Dictionary<int, Queue<GameObject>> pool;
 
-    private void Awake()
+    protected override void Awake()
     {
         base.Awake();
         pool = new Dictionary<int, Queue<GameObject>>();

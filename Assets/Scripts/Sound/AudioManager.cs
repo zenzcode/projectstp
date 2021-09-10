@@ -13,7 +13,7 @@ public class AudioManager : SingletonMonoBehaviour<AudioManager>
 
     private Dictionary<string, SoundEffect> _audioClips;
 
-    private void Awake()
+    protected override void Awake()
     {
         base.Awake();
         _audioClips = new Dictionary<string, SoundEffect>();

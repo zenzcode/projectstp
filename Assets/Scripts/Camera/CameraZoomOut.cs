@@ -25,11 +25,8 @@ public class CameraZoomOut : MonoBehaviour
 
     private void ZoomCamera(float target)
     {
-        Debug.Log(target);
-        if (_zoomOutRoutine != null) return;
-        Debug.Log($"Started for target {target}");
+        if (_zoomOutRoutine != null) StopCoroutine(_zoomOutRoutine);
         _zoomOutRoutine = StartCoroutine(ZoomCameraRoutine(target));
-        
     }
 
     private IEnumerator ZoomCameraRoutine(float target)
@@ -39,19 +36,16 @@ public class CameraZoomOut : MonoBehaviour
             if(_mainCamera.orthographicSize > target)
             {
                 yield return null;
-                _mainCamera.orthographicSize -= 0.01f;
+                _mainCamera.orthographicSize -= 0.02f;
             }
             else
             {
                 yield return null;
-                _mainCamera.orthographicSize += 0.01f;
+                _mainCamera.orthographicSize += 0.02f;
             }
         }
         _mainCamera.orthographicSize = target;
         StopCoroutine(_zoomOutRoutine);
         _zoomOutRoutine = null;
-        Debug.Log($"Finished for target {target}");
-        Debug.Log($"{_zoomOutRoutine}");
-        
     }
 }

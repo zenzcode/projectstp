@@ -23,10 +23,14 @@ public class PlayerHealthBarFollow : MonoBehaviour
 
     private void SetHealthbarPosition()
     {
-        var newPosition = Vector3.zero;
-        var screenPosPlayer = _mainCam.WorldToScreenPoint(_player.transform.position);
-        newPosition = screenPosPlayer + offset;
+        var screenPosPlayerWithOffset = _mainCam.WorldToScreenPoint(_player.transform.position + offset);
 
-        transform.position = newPosition;
+        transform.position = screenPosPlayerWithOffset;
+        transform.localScale = new Vector3(GetCamScale(), GetCamScale(), GetCamScale());
+    }
+
+    private float GetCamScale()
+    {
+        return Settings.ZoomedOutCamSize / _mainCam.orthographicSize;
     }
 }

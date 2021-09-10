@@ -3293,7 +3293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed40b3017f47dfc40809c8d3a9a1d563, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: {x: 0, y: 58.3, z: 0}
+  offset: {x: 0, y: 0.25, z: 0}
 --- !u!114 &263472169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18136,7 +18136,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2127888677}
-  m_RootOrder: 88
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1782675990
 BoxCollider2D:
@@ -21089,6 +21089,7 @@ Transform:
   - {fileID: 1656103860}
   - {fileID: 1049061336}
   - {fileID: 258540846}
+  - {fileID: 1782675989}
   - {fileID: 1061710926}
   - {fileID: 122809134}
   - {fileID: 1013979289}
@@ -21174,7 +21175,6 @@ Transform:
   - {fileID: 811958757}
   - {fileID: 405625128}
   - {fileID: 609798547}
-  - {fileID: 1782675989}
   - {fileID: 13371741}
   - {fileID: 527167684}
   - {fileID: 1688304270}
